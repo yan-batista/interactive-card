@@ -1,8 +1,16 @@
+import GlobalStyle from "./styles/global";
+
+import CardForm from "./pages/CardForm";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <div className="App">
+        <CardForm></CardForm>
+      </div>
+
+      <GlobalStyle />
+    </>
   );
 }
 
