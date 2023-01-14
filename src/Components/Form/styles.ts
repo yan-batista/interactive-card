@@ -10,6 +10,7 @@ export const Center = styled.div`
 
 export const FormContainer = styled.form`
   width: 90%;
+  margin-top: 50px;
 `;
 
 export const LabelInputContainer = styled.div`
@@ -23,19 +24,23 @@ export const DateContainer = styled(LabelInputContainer)`
   flex-direction: row;
 
   .card-exp-date-container {
-    min-width: 50%;
+    min-width: fit-content;
   }
 
   .card-cvc-container {
     min-width: 50%;
+
+    display: flex;
+    flex-grow: 1;
   }
 
   & .card-date {
     display: flex;
     flex-direction: row;
-
+    width: fit-content;
     & > input {
       min-width: 50px;
+      max-width: 50px;
     }
 
     & > input:not(:first-child) {

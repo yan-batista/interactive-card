@@ -15,5 +15,6 @@ export default createGlobalStyle`
         padding: 0;
         font-family: 'Space Grotesk', sans-serif;
         font-size: 18px;
+        color: hsl(278, 94%, 30%);
     }
 `;
