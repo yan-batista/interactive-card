@@ -1,11 +1,19 @@
 import React from "react";
 import { CardFront, CardBack, CardContainer, CardWrapper, Logo } from "./styles";
 
+// Images
 import CardFrontImg from "../../../images/bg-card-front.png";
 import CardBackImg from "../../../images/bg-card-back.png";
 import CardLogo from "../../../images/card-logo.svg";
 
-const Card = () => {
+// Type
+import { FormDataType } from "../../shared/types/FormData.type";
+
+type Props = {
+  formData: FormDataType;
+};
+
+const Card: React.FC<Props> = ({ formData }) => {
   return (
     <CardWrapper>
       <CardContainer>
@@ -13,14 +21,14 @@ const Card = () => {
           <div className="logo">
             <Logo src={CardLogo} />
           </div>
-          <span className="card-number">0000 0000 0000 0000</span>
+          <span className="card-number">{formData.cardNumber}</span>
           <div className="bottom-info">
-            <span className="card-name">JANE APPLESEED</span>
-            <span className="card-date">00/00</span>
+            <span className="card-name"> {formData.cardName} </span>
+            <span className="card-date"> {`${formData.cardMonthDate}/${formData.cardYearDate}`} </span>
           </div>
         </CardFront>
         <CardBack imageSrc={CardBackImg}>
-          <span className="cvc">000</span>
+          <span className="cvc">{formData.cardCvc}</span>
         </CardBack>
       </CardContainer>
     </CardWrapper>

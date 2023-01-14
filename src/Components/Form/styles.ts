@@ -75,12 +75,27 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
-  width: 100%;
-  padding: 10px;
+export const CompleteContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 8px;
-  border: 1px solid ${colors.veryDarkViolet};
-  background-color: ${colors.veryDarkViolet};
-  color: white;
+  width: 90%;
+  margin-top: 50px;
+
+  & > img {
+    margin-bottom: 35px;
+  }
+
+  & > h1 {
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  & > h4 {
+    color: ${colors.darkViolet};
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+  }
 `;

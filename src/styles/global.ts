@@ -15,6 +15,17 @@ export default createGlobalStyle`
         padding: 0;
         font-family: 'Space Grotesk', sans-serif;
         font-size: 18px;
+        font-weight: 500;
         color: hsl(278, 94%, 30%);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+
+      border-radius: 8px;
+      border: 1px solid ${colors.veryDarkViolet};
+      background-color: ${colors.veryDarkViolet};
+      color: white;
     }
 `;

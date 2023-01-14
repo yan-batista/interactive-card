@@ -21,8 +21,8 @@ const Card = styled.div<{ imageSrc: string }>`
 `;
 
 export const CardWrapper = styled.div`
-  position: absolute;
-  top: 20%;
+  position: relative;
+  top: -110px;
   left: 5%;
 `;
 
