@@ -24,6 +24,11 @@ const renderForm = (handleCardInfoChange: any) => {
           onChange={(e) => {
             handleCardInfoChange(e);
           }}
+          onKeyDown={(e) => {
+            const regexp = new RegExp(/^([ \u00c0-\u01ffa-zA-Z\-])+$/);
+            const validChar = regexp.test(e.key);
+            if (!validChar) e.preventDefault();
+          }}
         ></Input>
       </LabelInputContainer>
 
@@ -32,8 +37,20 @@ const renderForm = (handleCardInfoChange: any) => {
         <Input
           id="cardNumber"
           placeholder="e.g. 1234 5678 9123 000"
+          maxLength={19}
           onChange={(e) => {
+            e.target.value = e.target.value
+              .replace(/[^\dA-Z]/g, "")
+              .replace(/(.{4})/g, "$1 ")
+              .trim();
             handleCardInfoChange(e);
+          }}
+          onKeyDown={(e) => {
+            if (e.key !== "Backspace") {
+              const regexp = new RegExp(/^([0-9])+$/);
+              const validChar = regexp.test(e.key);
+              if (!validChar) e.preventDefault();
+            }
           }}
         ></Input>
       </LabelInputContainer>
@@ -46,8 +63,7 @@ const renderForm = (handleCardInfoChange: any) => {
               id="cardMonthDate"
               placeholder="MM"
               type="text"
-              min={1}
-              max={12}
+              maxLength={2}
               onChange={(e) => {
                 handleCardInfoChange(e);
               }}
@@ -56,6 +72,8 @@ const renderForm = (handleCardInfoChange: any) => {
               id="cardYearDate"
               placeholder="YY"
               type="text"
+              minLength={2}
+              maxLength={2}
               onChange={(e) => {
                 handleCardInfoChange(e);
               }}

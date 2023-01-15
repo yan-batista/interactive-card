@@ -18,6 +18,10 @@ export const LabelInputContainer = styled.div`
   flex-direction: column;
 
   margin: 10px 0;
+
+  & > input {
+    text-transform: uppercase;
+  }
 `;
 
 export const DateContainer = styled(LabelInputContainer)`

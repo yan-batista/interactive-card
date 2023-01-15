@@ -15,8 +15,8 @@ const CardForm = () => {
   const [formData, setFormData] = useState<FormDataType>({
     cardName: "NAME LASTNAME",
     cardNumber: "0000 0000 0000 0000",
-    cardMonthDate: "01",
-    cardYearDate: "2023",
+    cardMonthDate: "MM",
+    cardYearDate: "YY",
     cardCvc: "000",
   });
 
@@ -25,7 +25,7 @@ const CardForm = () => {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [event.target.id]: event.target.value,
+        [event.target.id]: event.target.value.toString().toUpperCase(),
       };
     });
   };
