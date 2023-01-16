@@ -4,4 +4,5 @@ export type FormDataType = {
   cardMonthDate: string;
   cardYearDate: string;
   cardCvc: string;
+  errors: { cardNameError: string };
 };

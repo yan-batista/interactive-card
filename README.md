@@ -19,7 +19,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 
 Users should be able to:
 
-- [ ] Fill in the form and see the card details update in real-time
+- [x] Fill in the form and see the card details update in real-time
 - [ ] Receive error messages when the form is submitted if:
   - [ ] Any input field is empty
   - [ ] The card number, expiry date, or CVC fields are in the wrong format

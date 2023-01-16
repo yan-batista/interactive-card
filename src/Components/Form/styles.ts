@@ -8,19 +8,25 @@ export const Center = styled.div`
   justify-content: center;
 `;
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.form<{ completeForm: boolean }>`
   width: 90%;
   margin-top: 50px;
+
+  display: ${(props) => (props.completeForm ? "none" : "block")};
 `;
 
 export const LabelInputContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   margin: 10px 0;
 
   & > input {
     text-transform: uppercase;
+  }
+
+  & .error-message {
+    color: ${colors.redError};
+    font-size: 14px;
   }
 `;
 
@@ -42,12 +48,13 @@ export const DateContainer = styled(LabelInputContainer)`
     display: flex;
     flex-direction: row;
     width: fit-content;
-    & > input {
+
+    & input {
       min-width: 50px;
       max-width: 50px;
     }
 
-    & > input:not(:first-child) {
+    & input:not(:first-child) {
       margin: 0 10px;
     }
   }
@@ -60,8 +67,8 @@ export const Label = styled.label`
   margin-bottom: 5px;
 `;
 
-export const Input = styled.input`
-  border: 1px solid grey;
+export const Input = styled.input<{ errorBorder: string }>`
+  border: 1px solid ${(props) => props.errorBorder};
   border-radius: 8px;
 
   padding: 8px;
@@ -79,8 +86,8 @@ export const Input = styled.input`
   }
 `;
 
-export const CompleteContainer = styled.div`
-  display: flex;
+export const CompleteContainer = styled.div<{ completeForm: boolean }>`
+  display: ${(props) => (props.completeForm ? "flex" : "none")};
   flex-direction: column;
   align-items: center;
   justify-content: center;

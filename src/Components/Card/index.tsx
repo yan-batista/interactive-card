@@ -21,14 +21,16 @@ const Card: React.FC<Props> = ({ formData }) => {
           <div className="logo">
             <Logo src={CardLogo} />
           </div>
-          <span className="card-number">{formData.cardNumber}</span>
+          <span className="card-number">{formData.cardNumber || "0000 0000 0000 0000"}</span>
           <div className="bottom-info">
-            <span className="card-name"> {formData.cardName} </span>
-            <span className="card-date"> {`${formData.cardMonthDate}/${formData.cardYearDate}`} </span>
+            <span className="card-name"> {formData.cardName || "NAME LASTNAME"} </span>
+            <span className="card-date">
+              {(formData.cardMonthDate || "MM") + "/" + (formData.cardYearDate || "YY")}
+            </span>
           </div>
         </CardFront>
         <CardBack imageSrc={CardBackImg}>
-          <span className="cvc">{formData.cardCvc}</span>
+          <span className="cvc">{formData.cardCvc || "000"}</span>
         </CardBack>
       </CardContainer>
     </CardWrapper>

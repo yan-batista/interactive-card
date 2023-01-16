@@ -13,11 +13,12 @@ import { FormDataType } from "../../shared/types/FormData.type";
 
 const CardForm = () => {
   const [formData, setFormData] = useState<FormDataType>({
-    cardName: "NAME LASTNAME",
-    cardNumber: "0000 0000 0000 0000",
-    cardMonthDate: "MM",
-    cardYearDate: "YY",
-    cardCvc: "000",
+    cardName: "",
+    cardNumber: "",
+    cardMonthDate: "",
+    cardYearDate: "",
+    cardCvc: "",
+    errors: { cardNameError: "" },
   });
 
   const handleCardInfoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
