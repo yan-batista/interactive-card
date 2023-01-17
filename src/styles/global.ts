@@ -16,7 +16,7 @@ export default createGlobalStyle`
         font-family: 'Space Grotesk', sans-serif;
         font-size: 18px;
         font-weight: 500;
-        color: hsl(278, 94%, 30%);
+        color: hsl(278, 68%, 11%);
     }
 
     .btn {

@@ -19,6 +19,11 @@ const Card = styled.div<{ imageSrc: string }>`
     font-size: 10px;
     letter-spacing: 1px;
   }
+
+  @media ${devices.desktop} {
+    width: 325px;
+    height: 160px;
+  }
 `;
 
 export const CardWrapper = styled.div`
@@ -29,7 +34,7 @@ export const CardWrapper = styled.div`
   max-height: 10px;
 
   @media ${devices.desktop} {
-    top: 30%;
+    top: 50%;
     left: -200px;
   }
 `;
@@ -43,7 +48,7 @@ export const CardFront = styled(Card)`
 
   & .card-number {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 5%;
 
     font-size: 18px;
@@ -61,6 +66,10 @@ export const CardFront = styled(Card)`
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media ${devices.desktop} {
+    top: -120px;
+  }
 `;
 
 export const CardBack = styled(Card)`
@@ -72,11 +81,16 @@ export const CardBack = styled(Card)`
   & > .cvc {
     position: absolute;
     top: 60px;
-    left: 78%;
+    left: 80%;
   }
 
   @media ${devices.desktop} {
-    top: 155px;
+    top: 75px;
+    left: 40px;
+
+    & > .cvc {
+      top: 73px;
+    }
   }
 `;
 
