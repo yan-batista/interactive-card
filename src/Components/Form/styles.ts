@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { colors } from "../../styles/global";
+import { devices } from "../../styles/devices";
 
 export const Center = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media ${devices.desktop} {
+    margin-left: 20%;
+    width: 400px;
+  }
 `;
 
 export const FormContainer = styled.form<{ completeForm: boolean }>`
@@ -84,6 +90,8 @@ export const CompleteContainer = styled.div<{ completeForm: boolean }>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  text-align: center;
 
   width: 90%;
   margin-top: 50px;

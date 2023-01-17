@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../styles/devices";
 
 const Card = styled.div<{ imageSrc: string }>`
   background-image: url(${(props) => props.imageSrc});
@@ -24,7 +25,13 @@ export const CardWrapper = styled.div`
   position: relative;
   top: -110px;
   left: 5%;
-  max-width: 90%;
+  max-width: 10px;
+  max-height: 10px;
+
+  @media ${devices.desktop} {
+    top: 30%;
+    left: -200px;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -66,6 +73,10 @@ export const CardBack = styled(Card)`
     position: absolute;
     top: 60px;
     left: 78%;
+  }
+
+  @media ${devices.desktop} {
+    top: 155px;
   }
 `;
 
