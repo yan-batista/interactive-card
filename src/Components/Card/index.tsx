@@ -24,7 +24,7 @@ const Card: React.FC<Props> = ({ formData }) => {
               alt="credit card logo: 2 circles, one big filled with white, and another one smaller with just borders"
             />
           </div>
-          <span className="card-number">{formData.cardNumber || "0000 0000 0000 0000"}</span>
+          <h1 className="card-number">{formData.cardNumber || "0000 0000 0000 0000"}</h1>
           <div className="bottom-info">
             <span className="card-name"> {formData.cardName || "NAME LASTNAME"} </span>
             <span className="card-date">

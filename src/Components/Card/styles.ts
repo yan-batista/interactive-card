@@ -14,7 +14,8 @@ const Card = styled.div<{ imageSrc: string }>`
 
   position: absolute;
 
-  & span {
+  & span,
+  & h1 {
     color: white;
     font-size: 10px;
     letter-spacing: 1px;
