@@ -225,7 +225,7 @@ const Form: React.FC<Props> = ({ formData, handleCardInfoChange, resetFormState 
       </FormContainer>
 
       <CompleteContainer completeForm={validation}>
-        <img src={iconComplete} />
+        <img src={iconComplete} alt="circle with a check mark for the completed form" />
         <h1>THANK YOU!</h1>
         <h4>We've added your card details</h4>
         <button className="btn" onClick={resetForm}>

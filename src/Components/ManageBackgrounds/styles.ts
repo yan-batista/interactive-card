@@ -9,7 +9,7 @@ const Background = styled.img.attrs((props) => ({
 
   @media ${devices.desktop} {
     height: 100vh;
-    width: 35%;
+    width: 30%;
   }
 `;
 

@@ -9,7 +9,7 @@ export const Center = styled.div`
   justify-content: center;
 
   @media ${devices.desktop} {
-    margin-left: 20%;
+    margin-left: 25%;
     width: 400px;
   }
 `;
