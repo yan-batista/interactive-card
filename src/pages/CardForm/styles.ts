@@ -10,15 +10,3 @@ export const Container = styled.div`
     height: 100vh;
   }
 `;
-
-export const Background = styled.img.attrs((props) => ({
-  src: props.src,
-}))`
-  height: 200px;
-  width: 100%;
-
-  @media ${devices.desktop} {
-    height: 100vh;
-    width: 35%;
-  }
-`;

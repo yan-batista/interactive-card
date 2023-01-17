@@ -82,6 +82,7 @@ export const CardBack = styled(Card)`
 
 export const Logo = styled.img.attrs((props) => ({
   src: props.src,
+  alt: props.alt,
 }))`
   width: 60px;
   position: absolute;

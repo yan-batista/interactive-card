@@ -27,5 +27,7 @@ export default createGlobalStyle`
       border: 1px solid ${colors.veryDarkViolet};
       background-color: ${colors.veryDarkViolet};
       color: white;
+
+      cursor: pointer;
     }
 `;

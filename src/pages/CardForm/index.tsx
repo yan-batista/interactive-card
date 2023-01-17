@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
-// Images
-import mobileBackground from "../../../images/bg-main-mobile.png";
-
 // Components
 import Form from "../../Components/Form/index";
 import Card from "../../Components/Card/index";
-import { Container, Background } from "./styles";
+import ManageBackgrounds from "../../Components/ManageBackgrounds/index";
+import { Container } from "./styles";
 
 // Type
 import { FormDataType } from "../../shared/types/FormData.type";
@@ -38,7 +36,7 @@ const CardForm = () => {
 
   return (
     <Container>
-      <Background src={mobileBackground}></Background>
+      <ManageBackgrounds />
       <Card formData={formData} />
       <Form formData={formData} handleCardInfoChange={handleCardInfoChange} resetFormState={resetFormState} />
     </Container>
