@@ -42,8 +42,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/interactive-card-details-form-IMtXOseiJ1)
+- Live Site URL: [Vercel](https://interactive-credit-card-xi.vercel.app)
 
 ## My process
 
