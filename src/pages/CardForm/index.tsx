@@ -12,14 +12,15 @@ import { Container, Background } from "./styles";
 import { FormDataType } from "../../shared/types/FormData.type";
 
 const CardForm = () => {
-  const [formData, setFormData] = useState<FormDataType>({
+  const formDataInitialState = {
     cardName: "",
     cardNumber: "",
     cardMonthDate: "",
     cardYearDate: "",
     cardCvc: "",
     errors: { cardNameError: "" },
-  });
+  };
+  const [formData, setFormData] = useState<FormDataType>(formDataInitialState);
 
   const handleCardInfoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -31,11 +32,15 @@ const CardForm = () => {
     });
   };
 
+  const resetFormState = () => {
+    setFormData(formDataInitialState);
+  };
+
   return (
     <Container>
       <Background src={mobileBackground}></Background>
       <Card formData={formData} />
-      <Form formData={formData} handleCardInfoChange={handleCardInfoChange} />
+      <Form formData={formData} handleCardInfoChange={handleCardInfoChange} resetFormState={resetFormState} />
     </Container>
   );
 };

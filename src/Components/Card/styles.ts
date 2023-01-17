@@ -24,6 +24,7 @@ export const CardWrapper = styled.div`
   position: relative;
   top: -110px;
   left: 5%;
+  max-width: 90%;
 `;
 
 export const CardContainer = styled.div`

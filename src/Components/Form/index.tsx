@@ -11,6 +11,7 @@ import { FormDataType } from "../../shared/types/FormData.type";
 type Props = {
   formData: FormDataType;
   handleCardInfoChange(event: React.ChangeEvent<HTMLInputElement>): void;
+  resetFormState(): void;
 };
 
 type FormErrorData = {
@@ -20,19 +21,23 @@ type FormErrorData = {
   cardCvcError: string;
 };
 
-const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
-  const [validation, setValidation] = useState<boolean>(false);
-  const [cardErrors, setCardErrors] = useState<FormErrorData>({
+const Form: React.FC<Props> = ({ formData, handleCardInfoChange, resetFormState }) => {
+  const cardErrorsInitialState = {
     cardNameError: "",
     cardNumberError: "",
     cardDateError: "",
     cardCvcError: "",
-  });
-  //validation
-  // check if card format number is valid
-  // check if month format is valid
-  // check if year format is valid
-  // check if cvc format is valid
+  };
+
+  const [validation, setValidation] = useState<boolean>(false);
+  const [cardErrors, setCardErrors] = useState<FormErrorData>(cardErrorsInitialState);
+
+  const resetForm = () => {
+    setCardErrors(cardErrorsInitialState);
+    setValidation(false);
+    resetFormState();
+  };
+
   const handleValidation = () => {
     const errorMessages = {
       cantBeEmpty: "Can't be blank",
@@ -122,7 +127,7 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
   };
 
   return (
-    <>
+    <Center>
       <FormContainer
         completeForm={validation}
         onSubmit={(e) => {
@@ -138,6 +143,8 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
           <Input
             id="cardName"
             placeholder="e.g. Jane Appleseed"
+            value={formData.cardName}
+            maxLength={30}
             type="text"
             errorBorder={cardErrors.cardNameError !== "" ? `${colors.redError}` : "grey"}
             onChange={(e) => {
@@ -153,6 +160,7 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
             id="cardNumber"
             errorBorder={cardErrors.cardNumberError !== "" ? `${colors.redError}` : "grey"}
             placeholder="e.g. 1234 5678 9123 000"
+            value={formData.cardNumber}
             maxLength={19}
             onChange={(e) => {
               e.target.value = e.target.value
@@ -173,6 +181,7 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
                 id="cardMonthDate"
                 errorBorder={cardErrors.cardDateError !== "" ? `${colors.redError}` : "grey"}
                 placeholder="MM"
+                value={formData.cardMonthDate}
                 type="text"
                 maxLength={2}
                 onChange={(e) => {
@@ -183,6 +192,7 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
                 id="cardYearDate"
                 errorBorder={cardErrors.cardDateError !== "" ? `${colors.redError}` : "grey"}
                 placeholder="YY"
+                value={formData.cardYearDate}
                 type="text"
                 minLength={2}
                 maxLength={2}
@@ -200,6 +210,7 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
               id="cardCvc"
               errorBorder={cardErrors.cardCvcError !== "" ? `${colors.redError}` : "grey"}
               placeholder="e.g. 123"
+              value={formData.cardCvc}
               type="text"
               maxLength={3}
               onChange={(e) => {
@@ -217,14 +228,12 @@ const renderForm = (formData: FormDataType, handleCardInfoChange: any) => {
         <img src={iconComplete} />
         <h1>THANK YOU!</h1>
         <h4>We've added your card details</h4>
-        <button className="btn">Continue</button>
+        <button className="btn" onClick={resetForm}>
+          Continue
+        </button>
       </CompleteContainer>
-    </>
+    </Center>
   );
-};
-
-const Form: React.FC<Props> = ({ formData, handleCardInfoChange }) => {
-  return <Center>{renderForm(formData, handleCardInfoChange)}</Center>;
 };
 
 export default Form;

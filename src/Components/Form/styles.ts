@@ -26,7 +26,7 @@ export const LabelInputContainer = styled.div`
 
   & .error-message {
     color: ${colors.redError};
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -61,7 +61,7 @@ export const DateContainer = styled(LabelInputContainer)`
 `;
 
 export const Label = styled.label`
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 2px;
 
   margin-bottom: 5px;
@@ -73,16 +73,9 @@ export const Input = styled.input<{ errorBorder: string }>`
 
   padding: 8px;
 
-  //Hide arrows for input type number
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  //Hide arrows for input type number for Firefox
-  &[type="number"] {
-    -moz-appearance: textfield;
+  &:focus {
+    outline: none;
+    border: 1px solid ${colors.veryDarkViolet};
   }
 `;
 
